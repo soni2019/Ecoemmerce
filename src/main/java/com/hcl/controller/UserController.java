@@ -15,16 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.dto.RegistrationDto;
 import com.hcl.entity.Registration;
-import com.hcl.repository.UserServiceRepo;
-import com.hcl.service.UserService;
+import com.hcl.service.IUserService;
 
 @RestController
 @RequestMapping("/onlineshopping")
 public class UserController {
 	@Autowired
-	UserService userService;
-	@Autowired
-	UserServiceRepo userRepo;
+	IUserService userService;
+	
 	
 	@PostMapping("/users")
 	public ResponseEntity<RegistrationDto> user(@Valid @RequestBody Registration registration) {

@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.hcl.dto.RegistrationDto;
 import com.hcl.entity.Registration;
 import com.hcl.exception.DataNotFoundException;
-import com.hcl.repository.UserServiceRepo;
-import com.hcl.service.UserService;
+import com.hcl.repository.IUserServiceRepo;
+import com.hcl.service.IUserService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 	@Autowired
-	UserServiceRepo userRepo;
+	IUserServiceRepo userRepo;
 		
 	
 	public RegistrationDto user(@RequestBody Registration registration){

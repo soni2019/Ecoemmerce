@@ -13,16 +13,16 @@ import com.hcl.dto.CategoryDto;
 import com.hcl.entity.Category;
 import com.hcl.entity.Registration;
 import com.hcl.exception.DataNotFoundException;
-import com.hcl.repository.ProductRepo;
-import com.hcl.repository.UserServiceRepo;
-import com.hcl.service.ProductService;
+import com.hcl.repository.IProductRepo;
+import com.hcl.repository.IUserServiceRepo;
+import com.hcl.service.IProductService;
 
 @Service
-public class ProductServiceImpl implements ProductService  {
+public class ProductServiceImpl implements IProductService  {
 	@Autowired
-	UserServiceRepo userServiceRepo;
+	IUserServiceRepo userServiceRepo;
 	@Autowired
-	ProductRepo productRepo;
+	IProductRepo productRepo;
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 	

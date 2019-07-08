@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.hcl.entity.Registration;
 
 @Repository
-public interface UserServiceRepo  extends JpaRepository<Registration, Long>{
+public interface IUserServiceRepo  extends JpaRepository<Registration, Long>{
 
 }

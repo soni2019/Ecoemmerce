@@ -13,13 +13,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.hcl.dto.RegistrationDto;
 import com.hcl.entity.Registration;
-import com.hcl.repository.UserServiceRepo;
+import com.hcl.repository.IUserServiceRepo;
 import com.hcl.serviceImpl.UserServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceImplTest {
 	@Mock
-	UserServiceRepo userServiceRepo;
+	IUserServiceRepo userServiceRepo;
 	@InjectMocks
 	UserServiceImpl userServiceImpl;
 	

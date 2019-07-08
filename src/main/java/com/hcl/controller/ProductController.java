@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.dto.CategoryDto;
 import com.hcl.entity.Category;
-import com.hcl.repository.ProductRepo;
-import com.hcl.service.ProductService;
+import com.hcl.repository.IProductRepo;
+import com.hcl.service.IProductService;
 
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 	@Autowired
-	ProductRepo productRepo;
+	IProductRepo productRepo;
 	@Autowired
-	ProductService productService;
+	IProductService productService;
 	
 	@PostMapping("/productbycategory")
 	public ResponseEntity<CategoryDto> addProduct(@RequestBody Category category,

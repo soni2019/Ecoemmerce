@@ -3,7 +3,7 @@ package com.hcl.service;
 import com.hcl.dto.RegistrationDto;
 import com.hcl.entity.Registration;
 
-public interface UserService {
+public interface IUserService {
 	
 	public RegistrationDto user(Registration registration);
 	

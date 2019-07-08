@@ -5,7 +5,7 @@ import java.util.List;
 import com.hcl.dto.CategoryDto;
 import com.hcl.entity.Category;
 
-public interface ProductService {
+public interface IProductService {
 	
 	public CategoryDto addProduct(Category category, String userStatus, Long userId);
 	

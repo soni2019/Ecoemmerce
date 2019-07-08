@@ -17,7 +17,7 @@ public class Registration {
 	@Size(max=20)
 	@NotEmpty(message="Please provide UserName.")
 	private String userName;
-	private long phoneNo;
+	private String phoneNo;
 	
 	@NotEmpty(message="Please provide UserType seller or buyer.")
 	private String userType;
@@ -45,11 +45,11 @@ public class Registration {
 		this.userName = userName;
 	}
 
-	public long getPhoneNo() {
+	public String getPhoneNo() {
 		return phoneNo;
 	}
 
-	public void setPhoneNo(long phoneNo) {
+	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 

@@ -37,7 +37,7 @@ public class UserControllerTest {
 		reg.setUserName("soni");
 		reg.setUserType("seller");
 		reg.setEmail("anc@gmkg.go");
-		reg.setPhoneNo(46141);
+		reg.setPhoneNo("4614");
 		reg.setAddress("Banglore");
 	}
 	
@@ -51,24 +51,20 @@ public class UserControllerTest {
 
 	}
 	
-	@Test
-	  public void testUpdateUser() throws Exception {		   
-	  mockmvc.perform(MockMvcRequestBuilders.put("/onlineshopping/users/{userId}",123l)
-			  .contentType(MediaType.APPLICATION_JSON)
-			  .accept(MediaType.APPLICATION_JSON)
-			  .content(asJsonString(reg)))
-	  		  .andExpect(status().isOk());
-	  }
-	
-	@Test
-	  public void testDeleteUser() throws Exception {		   
-	  mockmvc.perform(MockMvcRequestBuilders.delete("/onlineshopping/users/{userId}",123l)
-			  .contentType(MediaType.ALL)
-			  .accept(MediaType.ALL)
-			  .content(asJsonString(reg)))
-	  		  .andExpect(status().isOk());
-	  
-	  }
+	/*
+	 * @Test public void testUpdateUser() throws Exception {
+	 * mockmvc.perform(MockMvcRequestBuilders.put("/onlineshopping/users/{userId}",
+	 * 123l)
+	 * .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).
+	 * content(asJsonString(reg))) .andExpect(status().isOk()); }
+	 * 
+	 * @Test public void testDeleteUser() throws Exception {
+	 * mockmvc.perform(MockMvcRequestBuilders.delete(
+	 * "/onlineshopping/users/{userId}", 123l).contentType(MediaType.ALL)
+	 * .accept(MediaType.ALL).content(asJsonString(reg))).andExpect(status().isOk())
+	 * ;
+	 */
+	//}
 
 	
 	

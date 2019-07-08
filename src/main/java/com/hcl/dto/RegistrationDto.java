@@ -4,7 +4,7 @@ public class RegistrationDto {
 private long userId;
 	
 	private String userName;
-	private long phoneNo;
+	private String phoneNo;
 	private String userType;
 	private String email;
 	private String address;
@@ -20,10 +20,10 @@ private long userId;
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public long getPhoneNo() {
+	public String getPhoneNo() {
 		return phoneNo;
 	}
-	public void setPhoneNo(long phoneNo) {
+	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 	public String getUserType() {

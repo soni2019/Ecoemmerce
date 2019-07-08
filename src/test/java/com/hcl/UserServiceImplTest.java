@@ -30,7 +30,7 @@ public class UserServiceImplTest {
 		reg.setUserName("soni");
 		reg.setUserType("seller");
 		reg.setEmail("anc@gmkg.go");
-		reg.setPhoneNo(46141);
+		reg.setPhoneNo("4614");
 		reg.setAddress("Banglore");
 		Mockito.when(userServiceRepo.save(reg)).thenReturn(reg);
 		RegistrationDto expectedValue= userServiceImpl.user(reg);
@@ -44,7 +44,7 @@ public class UserServiceImplTest {
 		reg.setUserName("soni");
 		reg.setUserType("seller");
 		reg.setEmail("anc@gmkg.go");
-		reg.setPhoneNo(46141);
+		reg.setPhoneNo("4614");
 		reg.setAddress("Banglore");
 		
 		Registration newUser = new Registration();
@@ -65,7 +65,7 @@ public class UserServiceImplTest {
 		reg.setUserName("soni");
 		reg.setUserType("seller");
 		reg.setEmail("anc@gmkg.go");
-		reg.setPhoneNo(46141);
+		reg.setPhoneNo("4614");
 		reg.setAddress("Banglore");
 		Mockito.when(userServiceRepo.findById(Mockito.anyLong())).thenReturn(Optional.of(reg));
 		String expectedValue= userServiceImpl.deleteUser(reg.getUserId());

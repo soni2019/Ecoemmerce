@@ -1,5 +1,7 @@
 com\hcl\controller\UserController.class
 com\hcl\serviceImpl\UserServiceImpl.class
+com\hcl\serviceImpl\LoginService.class
+com\hcl\entity\Login.class
 com\hcl\config\SwaggerConfig.class
 com\hcl\controller\ProductController.class
 com\hcl\dto\CategoryDto.class
@@ -12,7 +14,11 @@ com\hcl\service\IUserService.class
 com\hcl\exception\DataNotFoundException.class
 com\hcl\dto\RegistrationDto.class
 com\hcl\repository\IUserServiceRepo.class
+com\hcl\repository\ILoginRepo.class
+com\hcl\service\ILogin.class
 com\hcl\entity\ErrorDetail.class
 com\hcl\entity\Category.class
 com\hcl\repository\IProductRepo.class
+com\hcl\repository\IProduct.class
+com\hcl\controller\LoginController.class
 com\hcl\service\IProductService.class

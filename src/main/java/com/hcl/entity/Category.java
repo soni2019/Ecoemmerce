@@ -2,16 +2,16 @@ package com.hcl.entity;
 
 import java.util.Date;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="Category")
+
 public class Category {
 	
 	@Id
@@ -20,7 +20,7 @@ public class Category {
 	private String categoryName;
 	private Date lastUpdate;
 	
-	@OneToMany(mappedBy="category", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="category", cascade=CascadeType.PERSIST)
 	private Set<Product> products;
 	
 	

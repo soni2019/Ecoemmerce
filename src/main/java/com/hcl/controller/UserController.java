@@ -33,14 +33,15 @@ public class UserController {
 	}
 	
 	@PutMapping("/users/{userId}")
-	public ResponseEntity<RegistrationDto> updateUser(@RequestBody Registration registration,@RequestParam(value = "userId", required=true) Long userId ){
+	public ResponseEntity<RegistrationDto> updateUser(@RequestBody Registration registration,
+			@RequestParam(value = "userId", required=false) Long userId ){
 		RegistrationDto updateUser= userService.updateUser(registration, userId);
 		return new ResponseEntity<RegistrationDto>(updateUser,HttpStatus.OK);
 		
 	}
 
 	@DeleteMapping("/users/{userId}")
-	public String deleteUser(@RequestParam(value = "userId", required=true) Long userId ){
+	public String deleteUser(@RequestParam(value = "userId", required=false) Long userId ){
 		userService.deleteUser(userId);
 		return  "Deleted Sucessfully";
 

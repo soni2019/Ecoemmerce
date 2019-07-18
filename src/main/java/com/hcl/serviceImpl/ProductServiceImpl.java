@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 import com.hcl.dto.CategoryDto;
 import com.hcl.entity.Category;
+import com.hcl.entity.Product;
 import com.hcl.entity.Registration;
 import com.hcl.exception.DataNotFoundException;
+import com.hcl.repository.IProduct;
 import com.hcl.repository.IProductRepo;
 import com.hcl.repository.IUserServiceRepo;
 import com.hcl.service.IProductService;
@@ -23,23 +25,34 @@ public class ProductServiceImpl implements IProductService  {
 	IUserServiceRepo userServiceRepo;
 	@Autowired
 	IProductRepo productRepo;
+	@Autowired
+	IProduct prod;
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 	
 	@Override
-	public CategoryDto addProduct(Category category, String userStatus, Long userId)
+	public Product addProduct(Product category, String userStatus, Long userId)
 	{
 		Registration oldUser=userServiceRepo.getOne(userId);
-		CategoryDto regDto=null;
+		Product product=null;
 		if(oldUser.getUserType().equals(userStatus)) {
-			Category product = productRepo.save(category);
-			regDto= new CategoryDto();		
-			BeanUtils.copyProperties(product, regDto);
+			product = prod.save(category);
+			
 		}
 		else {
-			logger.info("Unable to find product category:" + category.getCategoryId()+ " OR invalid user");
+			logger.info("Unable to add productCode : " +category.getProductCode()+ "invalid user");
 			throw new DataNotFoundException("No Record Avaliable");
 		}
+		
+		return product;
+	}
+	
+	@Override
+	public CategoryDto addCategory(Category category)
+	{
+			Category product = productRepo.save(category);
+			CategoryDto regDto= new CategoryDto();		
+			BeanUtils.copyProperties(product, regDto);
 		
 		return regDto;
 	}

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.dto.CategoryDto;
 import com.hcl.entity.Category;
+import com.hcl.entity.Product;
 import com.hcl.repository.IProductRepo;
 import com.hcl.service.IProductService;
 
@@ -25,13 +26,21 @@ public class ProductController {
 	@Autowired
 	IProductService productService;
 	
+	@PostMapping("/category")
+	public ResponseEntity<CategoryDto> addCategory(@RequestBody Category category)
+	{
+		CategoryDto product=productService.addCategory(category);
+		return new ResponseEntity<CategoryDto>(product,HttpStatus.CREATED);
+		
+	}
+	
 	@PostMapping("/productbycategory")
-	public ResponseEntity<CategoryDto> addProduct(@RequestBody Category category,
+	public ResponseEntity<Product> addProduct(@RequestBody Product product,
 			@RequestParam(value="userStatus") String userStatus,
 			@RequestParam(value="userId") Long userId)
 	{
-		CategoryDto product=productService.addProduct(category, userStatus, userId);
-		return new ResponseEntity<CategoryDto>(product,HttpStatus.CREATED);
+		Product newProduct=productService.addProduct(product, userStatus, userId);
+		return new ResponseEntity<Product>(newProduct,HttpStatus.CREATED);
 		
 	}
 	

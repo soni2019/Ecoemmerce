@@ -4,25 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="Product")
+
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long productCode;
+	private String productName;
 	private int quantity;
-	private double price;	
-	private Long categoryId;
+	private double price;
 	@ManyToOne
-	@JoinColumn
 	private Category category;
 	
 	
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public Long getProductCode() {
 		return productCode;
 	}
@@ -41,16 +44,21 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public Long getCategoryId() {
+	/*public Long getCategoryId() {
 		return categoryId;
 	}
 	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
-	}
+	}*/
 	@Override
 	public String toString() {
-		return "Product [productCode=" + productCode + ", quantity=" + quantity + ", price=" + price + ", categoryId="
-				+ categoryId + "]";
+		return "Product [productCode=" + productCode + ", quantity=" + quantity + ", productName=" + productName + ", price=" + price + "]";
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 	
 	
